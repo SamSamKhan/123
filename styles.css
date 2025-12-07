@@ -1,0 +1,138 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --accent: #f59e0b;
+  --grid: #1f2937;
+  --snake: #22d3ee;
+  --snake-dark: #0ea5e9;
+  --food: #f472b6;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, #111827, #0b1020 40%, #080c18);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.layout {
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  gap: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.panel {
+  background: linear-gradient(145deg, #0d1628, #0a1020);
+  border: 1px solid #1f2937;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.state {
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+button {
+  background: linear-gradient(145deg, #f59e0b, #f97316);
+  border: none;
+  color: #0b1020;
+  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 12px 25px rgba(245, 158, 11, 0.35);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(245, 158, 11, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(245, 158, 11, 0.32);
+}
+
+#board {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.04), transparent 35%),
+    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.03), transparent 40%),
+    #0c1323;
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: block;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .status {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .value {
+    font-size: 1.6rem;
+  }
+}
